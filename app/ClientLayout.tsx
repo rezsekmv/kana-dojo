@@ -1,6 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import useCrazyModeStore from '@/features/CrazyMode/store/useCrazyModeStore';
 import { usePathname } from 'next/navigation';
@@ -14,16 +14,12 @@ import MobileBottomBar from '@/shared/components/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 
-// Statically import the default font
-import { Zen_Maru_Gothic } from 'next/font/google';
-
-const defaultFont = Zen_Maru_Gothic({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'sans-serif']
-});
+// Initialize adaptive selector early to load persisted weights from IndexedDB
+// This runs once at module load time, ensuring weights are ready before games start
+if (typeof window !== 'undefined') {
+  const selector = getGlobalAdaptiveSelector();
+  selector.ensureLoaded().catch(console.error);
+}
 
 // Define a type for the font object for clarity, adjust as needed
 type FontObject = {
@@ -73,23 +69,14 @@ export default function ClientLayout({
   // 3. Create state to hold the fonts module
   const [fontsModule, setFontsModule] = useState<FontObject[] | null>(null);
 
-  // Use useMemo to instantly calculate the font class name
-  const fontClassName = useMemo(() => {
-    // If the full module is loaded and the user selected a font from that list, use it
-    if (fontsModule) {
-      const selected = fontsModule.find(
-        (fontObj: FontObject) => effectiveFont === fontObj.name
-      );
-      if (selected) return selected.font.className;
-    }
-
-    // On the first render, or if the user's preferred font is the default one,
-    // use the class name from the statically imported default font
-    return defaultFont.className;
-  }, [fontsModule, effectiveFont]);
+  // Calculate fontClassName based on the stateful fontsModule
+  const fontClassName = fontsModule
+    ? fontsModule.find((fontObj: FontObject) => effectiveFont === fontObj.name)
+        ?.font.className
+    : '';
 
   useEffect(() => {
-    applyTheme(effectiveTheme);
+    applyTheme(effectiveTheme); // This now sets both CSS variables AND data-theme attribute
 
     if (typeof window !== 'undefined') {
       window.history.scrollRestoration = 'manual';
@@ -126,13 +113,6 @@ export default function ClientLayout({
     };
   }, []);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const selector = getGlobalAdaptiveSelector();
-      selector.ensureLoaded().catch(console.error);
-    }
-  }, []);
-
   // Track user visits for streak feature
   useVisitTracker();
 
@@ -152,7 +132,7 @@ export default function ClientLayout({
 
   return (
     <div
-      data-scroll-restoration-id='container'
+      data-scroll-restoration-id="container"
       className={clsx(
         'bg-[var(--background-color)] text-[var(--main-color)] min-h-[100dvh] max-w-[100dvw]',
         fontClassName
