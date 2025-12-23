@@ -13,7 +13,7 @@ import {
   mdxComponents
 } from '@/features/Blog';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
-import { routing, type Locale } from '@/core/i18n/routing';
+import { routing, type Locale as _Locale } from '@/core/i18n/routing';
 import type { Locale as BlogLocale } from '@/features/Blog';
 import Sidebar from '@/shared/components/Menu/Sidebar';
 import Banner from '@/shared/components/Menu/Banner';
@@ -89,13 +89,13 @@ const components = {
   ...mdxComponents,
   // Standard HTML element styling
   h1: ({ children }: { children: React.ReactNode }) => (
-    <h2 className='mb-4 mt-8 text-2xl font-bold text-[var(--main-color)]'>
+    <h2 className='mt-8 mb-4 text-2xl font-bold text-[var(--main-color)]'>
       {children}
     </h2>
   ),
   h2: ({ children }: { children: React.ReactNode }) => (
     <h2
-      className='mb-4 mt-8 text-2xl font-bold text-[var(--main-color)]'
+      className='mt-8 mb-4 text-2xl font-bold text-[var(--main-color)]'
       id={generateHeadingId(String(children))}
     >
       {children}
@@ -103,7 +103,7 @@ const components = {
   ),
   h3: ({ children }: { children: React.ReactNode }) => (
     <h3
-      className='mb-3 mt-6 text-xl font-semibold text-[var(--main-color)]'
+      className='mt-6 mb-3 text-xl font-semibold text-[var(--main-color)]'
       id={generateHeadingId(String(children))}
     >
       {children}
@@ -111,7 +111,7 @@ const components = {
   ),
   h4: ({ children }: { children: React.ReactNode }) => (
     <h4
-      className='mb-2 mt-4 text-lg font-medium text-[var(--main-color)]'
+      className='mt-4 mb-2 text-lg font-medium text-[var(--main-color)]'
       id={generateHeadingId(String(children))}
     >
       {children}
@@ -146,7 +146,7 @@ const components = {
     </a>
   ),
   blockquote: ({ children }: { children: React.ReactNode }) => (
-    <blockquote className='my-4 border-l-4 border-[var(--main-color)] pl-4 italic text-[var(--secondary-color)]'>
+    <blockquote className='my-4 border-l-4 border-[var(--main-color)] pl-4 text-[var(--secondary-color)] italic'>
       {children}
     </blockquote>
   ),
@@ -236,9 +236,9 @@ export default async function AcademyPostPage({
       <StructuredData data={breadcrumbSchema} />
 
       {/* Blog Post Content with Sidebar */}
-      <div className='min-h-[100dvh] max-w-[100dvw] lg:pr-20 flex gap-0'>
+      <div className='flex min-h-[100dvh] max-w-[100dvw] gap-0 lg:pr-20'>
         <Sidebar />
-        <div className='flex flex-col gap-4 w-full lg:w-4/5 px-4 md:px-8 pb-20'>
+        <div className='flex w-full flex-col gap-4 px-4 pb-20 md:px-8 lg:w-4/5'>
           <Banner />
           <BlogPostComponent post={post} relatedPosts={relatedPostsMeta}>
             {/* Render MDX content with custom components */}

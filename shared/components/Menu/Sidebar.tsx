@@ -65,20 +65,20 @@ const Sidebar = () => {
       id='main-sidebar'
       className={clsx(
         'flex lg:flex-col lg:items-start lg:gap-2',
-        'lg:w-1/5 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto',
+        'lg:sticky lg:top-0 lg:h-screen lg:w-1/5 lg:overflow-y-auto',
         'lg:pt-6',
         'max-lg:fixed max-lg:bottom-0 max-lg:w-full',
         'max-lg:bg-[var(--card-color)]',
         'z-50',
-        'max-lg:border-t-2 border-[var(--border-color)] max-lg:py-2 max-lg:justify-evenly max-lg:items-center',
-        'lg:border-r-1 lg:h-auto lg:px-3',
+        'border-[var(--border-color)] max-lg:items-center max-lg:justify-evenly max-lg:border-t-2 max-lg:py-2',
+        'lg:h-auto lg:border-r-1 lg:px-3',
         'lg:pb-12'
       )}
     >
       <h1
         className={clsx(
-          'flex gap-1.5 items-center text-3xl pl-4',
-          'max-lg:hidden max-3xl:flex-col max-3xl:items-start'
+          'flex items-center gap-1.5 pl-4 text-3xl',
+          'max-3xl:flex-col max-3xl:items-start max-lg:hidden'
         )}
       >
         <span className='font-bold'>KanaDojo</span>
@@ -89,10 +89,10 @@ const Sidebar = () => {
       <Link
         href='/'
         className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:p-3 rounded-xl  lg:w-full flex max-lg:justify-center items-center gap-2',
+          'flex items-center gap-2 rounded-xl text-2xl transition-all duration-250 max-lg:justify-center max-lg:p-3 lg:w-full lg:px-4 lg:py-2',
           pathWithoutLocale === '/'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -100,12 +100,25 @@ const Sidebar = () => {
         <span className='max-lg:hidden'>Home</span>
       </Link>
       <Link
+        href='/progress'
+        className={clsx(
+          'flex items-center gap-2 rounded-xl text-2xl transition-all duration-250 max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
+          pathWithoutLocale === '/progress'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
+        )}
+        onClick={playClick}
+      >
+        <Trophy />
+        <span className='max-lg:hidden'>Progress</span>
+      </Link>
+      <Link
         href='/kana'
         className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl  lg:w-full flex max-lg:justify-center items-center gap-2',
+          'flex items-center gap-2 rounded-xl text-2xl transition-all duration-250 max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
           pathWithoutLocale === '/kana'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -115,62 +128,35 @@ const Sidebar = () => {
       <Link
         href='/vocabulary'
         className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl lg:w-full flex max-lg:justify-center items-center gap-2',
+          'flex items-center gap-2 rounded-xl text-2xl transition-all duration-250 max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
           pathWithoutLocale === '/vocabulary'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
         語<span className='max-lg:hidden'> Vocabulary</span>
       </Link>
 
-      {/*calligraphy */}
-      <Link
-        href='/calligraphy'
-        className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl lg:w-full flex max-lg:justify-center items-center gap-2',
-          pathWithoutLocale === '/calligraphy'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
-        )}
-        onClick={playClick}
-      >
-        書<span className='max-lg:hidden'> Calligraphy</span>
-      </Link>
-
       <Link
         href='/kanji'
         className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl lg:w-full flex max-lg:justify-center items-center gap-2',
+          'flex items-center gap-2 rounded-xl text-2xl transition-all duration-250 max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
           pathWithoutLocale === '/kanji'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
         字<span className='max-lg:hidden'> Kanji</span>
       </Link>
       <Link
-        href='/progress'
-        className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl lg:w-full flex max-lg:justify-center items-center gap-2',
-          pathWithoutLocale === '/progress'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
-        )}
-        onClick={playClick}
-      >
-        <Trophy />
-        <span className='max-lg:hidden'>Progress</span>
-      </Link>
-      <Link
         href='/preferences'
         className={clsx(
-          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl lg:w-full flex max-lg:justify-center items-center gap-2',
+          'flex items-center gap-2 rounded-xl text-2xl transition-all duration-250 max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
           pathWithoutLocale === '/preferences'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -184,16 +170,16 @@ const Sidebar = () => {
         <span className='max-lg:hidden'>Preferences</span>
       </Link>
 
-      <div className='max-lg:hidden w-full mt-3 px-4 text-xs uppercase  text-[var(--main-color)] opacity-70'>
+      <div className='mt-3 w-full px-4 text-xs text-[var(--main-color)] uppercase opacity-70 max-lg:hidden'>
         Academy
       </div>
       <Link
         href='/academy'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/academy'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -201,16 +187,16 @@ const Sidebar = () => {
         <span>Guides</span>
       </Link>
 
-      <div className='max-lg:hidden w-full mt-3 px-4 text-xs uppercase  text-[var(--main-color)] opacity-70'>
+      <div className='mt-3 w-full px-4 text-xs text-[var(--main-color)] uppercase opacity-70 max-lg:hidden'>
         Tools
       </div>
       <Link
         href='/translate'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/translate'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -218,16 +204,16 @@ const Sidebar = () => {
         <span>Translate</span>
       </Link>
 
-      <div className='max-lg:hidden w-full mt-3 px-4 text-xs uppercase  text-[var(--main-color)] opacity-70'>
+      <div className='mt-3 w-full px-4 text-xs text-[var(--main-color)] uppercase opacity-70 max-lg:hidden'>
         Experiments
       </div>
       <Link
         href='/experiments'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -237,10 +223,10 @@ const Sidebar = () => {
       <Link
         href='/zen'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/zen'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -250,10 +236,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/breathing'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/breathing'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -263,10 +249,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/ambient'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/ambient'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -276,10 +262,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/rain'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/rain'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -289,10 +275,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/sound'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/sound'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -302,10 +288,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/haiku'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/haiku'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -315,10 +301,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/constellation'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/constellation'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -328,10 +314,10 @@ const Sidebar = () => {
       <Link
         href='/experiments/typing'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/typing'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
@@ -341,15 +327,27 @@ const Sidebar = () => {
       <Link
         href='/experiments/memory'
         className={clsx(
-          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
           pathWithoutLocale === '/experiments/memory'
-            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
-            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
         )}
         onClick={playClick}
       >
         <Brain className='shrink-0' />
         <span>Memory Palace</span>
+      </Link>
+      <Link
+        href='/calligraphy'
+        className={clsx(
+          'flex w-full items-center gap-2 rounded-xl px-4 py-2 text-xl transition-all duration-250 max-lg:hidden',
+          pathWithoutLocale === '/calligraphy'
+            ? 'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]'
+            : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]'
+        )}
+        onClick={playClick}
+      >
+        書<span> Calligraphy</span>
       </Link>
     </div>
   );
