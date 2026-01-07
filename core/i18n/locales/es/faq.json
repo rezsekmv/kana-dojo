@@ -1,0 +1,36 @@
+{
+  "title": "Preguntas Frecuentes",
+  "subtitle": "Encuentra respuestas a preguntas comunes sobre KanaDojo",
+  "q1": {
+    "question": "¿Qué es KanaDojo?",
+    "answer": "KanaDojo es una plataforma gratuita y estética para aprender japonés que te ayuda a dominar Hiragana, Katakana, Kanji y Vocabulario a través de juegos y ejercicios interactivos. Cuenta con más de 100 temas personalizables, seguimiento de progreso y modos de entrenamiento diseñados para hacer que aprender japonés sea agradable y efectivo."
+  },
+  "q2": {
+    "question": "¿Es KanaDojo completamente gratis?",
+    "answer": "¡Sí! KanaDojo es completamente gratis sin costos ocultos, suscripciones o funciones premium. Todo el contenido de aprendizaje, juegos, temas y funciones están disponibles para todos sin cargo."
+  },
+  "q3": {
+    "question": "¿Qué puedo aprender en KanaDojo?",
+    "answer": "Puedes aprender todos los sistemas de escritura japonesa fundamentales: Hiragana (básico, dakuon, yoon), Katakana (básico, dakuon, yoon, sonidos extranjeros), Kanji organizados por niveles JLPT (N5-N1), y Vocabulario japonés también organizado por niveles JLPT con miles de palabras y oraciones de ejemplo."
+  },
+  "q4": {
+    "question": "¿Necesito crear una cuenta?",
+    "answer": "¡No se requiere cuenta! KanaDojo almacena todo tu progreso localmente en tu navegador, por lo que puedes comenzar a aprender inmediatamente sin registrarte. Tu progreso y preferencias se guardan automáticamente mientras usas la plataforma."
+  },
+  "q5": {
+    "question": "¿Cuáles son los diferentes modos de entrenamiento?",
+    "answer": "KanaDojo ofrece múltiples modos de entrenamiento: Modo Pick (reconocimiento de opción múltiple), Reverse-Pick (opción múltiple inversa), Modo Input (práctica de entrada de texto), Reverse-Input (entrada de texto inversa), Modo Blitz (pruebas de velocidad) y Modo Gauntlet (desafíos de dominio integral)."
+  },
+  "q6": {
+    "question": "¿Cómo funciona el seguimiento del progreso?",
+    "answer": "KanaDojo rastrea automáticamente tus estadísticas de aprendizaje, incluyendo respuestas correctas, velocidad, precisión y niveles de dominio para cada carácter o palabra. Todo el progreso se almacena localmente en tu navegador y se muestra en gráficos y estadísticas detalladas en la página de Progreso."
+  },
+  "q7": {
+    "question": "¿Puedo usar KanaDojo en dispositivos móviles?",
+    "answer": "¡Sí! KanaDojo es totalmente responsive y funciona perfectamente en teléfonos móviles, tabletas y computadoras de escritorio. La interfaz se adapta al tamaño de tu pantalla para una experiencia de aprendizaje óptima en cualquier dispositivo."
+  },
+  "q8": {
+    "question": "¿Es KanaDojo adecuado para la preparación del JLPT?",
+    "answer": "¡Absolutamente! KanaDojo organiza el contenido de Kanji y Vocabulario por niveles JLPT (N5, N4, N3, N2, N1), lo que lo convierte en una excelente herramienta complementaria para la preparación del examen JLPT. Practica caracteres y palabras específicas para tu nivel JLPT objetivo."
+  }
+}

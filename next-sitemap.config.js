@@ -79,19 +79,19 @@ export default {
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: [
         {
-          href: `https://kanadojo.com/en${basePath}`,
+          href: `/en${basePath}`,
           hreflang: 'en'
         },
         {
-          href: `https://kanadojo.com/es${basePath}`,
+          href: `/es${basePath}`,
           hreflang: 'es'
         },
         {
-          href: `https://kanadojo.com/ja${basePath}`,
+          href: `/ja${basePath}`,
           hreflang: 'ja'
         },
         {
-          href: `https://kanadojo.com/en${basePath}`,
+          href: `/en${basePath}`,
           hreflang: 'x-default'
         }
       ]

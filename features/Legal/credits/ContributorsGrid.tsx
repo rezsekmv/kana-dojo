@@ -20,7 +20,7 @@ export default function ContributorsGrid({
         >
           <Image
             src={c.avatar}
-            alt={c.login}
+            alt={`${c.login} - KanaDojo contributor avatar`}
             width={48}
             height={48}
             className='mb-2 rounded-full'

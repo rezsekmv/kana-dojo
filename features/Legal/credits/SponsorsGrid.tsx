@@ -11,7 +11,7 @@ export default function SponsorsGrid({ sponsors }: { sponsors: Sponsor[] }) {
           <div className='flex flex-col items-center rounded p-2 text-center text-[var(--secondary-color)] transition-colors hover:bg-[var(--card-color)]'>
             <Image
               src={s.avatar}
-              alt={s.login}
+              alt={`${s.login} - KanaDojo sponsor avatar`}
               unoptimized // don't remove this, I don't want to include the domain (api.dicebear.com) in  next.config.js
               width={48}
               height={48}

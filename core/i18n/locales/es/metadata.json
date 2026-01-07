@@ -108,6 +108,12 @@
     "description": "Stay updated with the latest KanaDojo features, improvements, and bug fixes. View our changelog and update history.",
     "keywords": "patch notes, updates, changelog, new features"
   },
+  "faq": {
+    "title": "Preguntas Frecuentes - Ayuda y Soporte de KanaDojo",
+    "titleShort": "FAQ - Ayuda y Soporte",
+    "description": "Encuentra respuestas a preguntas comunes sobre KanaDojo. Aprende sobre nuestra plataforma gratuita de aprendizaje de japonés, características, seguimiento de progreso, preparación JLPT y más.",
+    "keywords": "kanadojo preguntas frecuentes, ayuda aprendizaje japonés, preguntas kanadojo, cómo usar kanadojo, soporte kanadojo, app japonés gratis, preparación JLPT preguntas"
+  },
   "experiments": {
     "title": "Experiments - Explore Alternative Learning Methods",
     "titleShort": "Experiments",

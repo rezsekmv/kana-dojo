@@ -22,13 +22,21 @@ export default function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Extract locale from pathname
+  const localeMatch = pathname.match(/^\/(en|es|ja)/);
+  const locale = localeMatch ? localeMatch[1] : 'en';
+
   if (isDev) {
     const url = request.nextUrl.clone();
     url.pathname = `/en${pathname}`;
-    return NextResponse.rewrite(url);
+    const response = NextResponse.rewrite(url);
+    response.headers.set('x-locale', 'en');
+    return response;
   }
 
-  return intlMiddleware!(request);
+  const response = intlMiddleware!(request);
+  response.headers.set('x-locale', locale);
+  return response;
 }
 
 export const config = {

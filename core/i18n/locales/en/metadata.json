@@ -108,6 +108,12 @@
     "description": "Stay updated with the latest KanaDojo features, improvements, and bug fixes. View our changelog and update history.",
     "keywords": "patch notes, updates, changelog, new features"
   },
+  "faq": {
+    "title": "Frequently Asked Questions - KanaDojo Help & Support",
+    "titleShort": "FAQ - Help & Support",
+    "description": "Find answers to common questions about KanaDojo. Learn about our free Japanese learning platform, features, progress tracking, JLPT preparation, and more.",
+    "keywords": "kanadojo faq, japanese learning help, kanadojo questions, how to use kanadojo, kanadojo support, free japanese app, JLPT preparation questions, japanese learning platform help"
+  },
   "experiments": {
     "title": "Experiments - Explore Alternative Learning Methods",
     "titleShort": "Experiments",

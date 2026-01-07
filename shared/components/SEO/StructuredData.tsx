@@ -55,18 +55,24 @@ export const kanaDojoSchema = {
       '@type': 'WebApplication',
       '@id': 'https://kanadojo.com/#webapp',
       name: 'KanaDojo',
+      alternateName: 'Kana Dojo',
       url: 'https://kanadojo.com',
       applicationCategory: 'EducationalApplication',
+      applicationSubCategory: 'Language Learning',
       operatingSystem: 'Any',
+      browserRequirements: 'Requires JavaScript. Works with Chrome, Firefox, Safari, Edge.',
       offers: {
         '@type': 'Offer',
         price: '0',
-        priceCurrency: 'USD'
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock'
       },
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5',
-        ratingCount: '1'
+        ratingCount: '1',
+        bestRating: '5',
+        worstRating: '1'
       },
       description:
         'Interactive Japanese learning platform with Hiragana, Katakana, Kanji, and Vocabulary training',
@@ -77,8 +83,26 @@ export const kanaDojoSchema = {
         'Interactive games and quizzes',
         'Progress tracking',
         '100+ customizable themes',
-        'Multiple training modes'
-      ]
+        'Multiple training modes',
+        'Blitz and Gauntlet challenges',
+        'No account required',
+        'Works offline with progress saved locally'
+      ],
+      author: {
+        '@type': 'Organization',
+        name: 'LingDojo'
+      },
+      creator: {
+        '@type': 'Organization',
+        name: 'LingDojo'
+      },
+      inLanguage: ['en', 'es', 'ja'],
+      availableLanguage: ['English', 'Spanish', 'Japanese'],
+      isAccessibleForFree: true,
+      audience: {
+        '@type': 'EducationalAudience',
+        educationalRole: 'Student'
+      }
     },
     {
       '@type': 'EducationalOrganization',
