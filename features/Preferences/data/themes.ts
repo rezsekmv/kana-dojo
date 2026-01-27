@@ -258,12 +258,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(78.0% 0.135 215.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.155 90.0 / 1)',
       },
-      {
-        id: 'festival-gold',
-        backgroundColor: 'oklch(19.0% 0.035 45.0 / 1)',
-        mainColor: 'oklch(82.0% 0.155 85.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.145 20.0 / 1)',
-      },
     ],
   },
 
@@ -272,12 +266,6 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Sun,
     isLight: true,
     themes: [
-      {
-        id: 'cedar-incense',
-        backgroundColor: 'oklch(19.0% 0.020 70.0 / 1)',
-        mainColor: 'oklch(72.0% 0.095 75.0 / 1)',
-        secondaryColor: 'oklch(58.0% 0.065 55.0 / 1)',
-      },
       {
         id: 'long',
         backgroundColor: 'oklch(84.00% 0.055 6.93 / 1)',
@@ -334,13 +322,6 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     isLight: false,
     themes: [
-
-      {
-        id: 'ginger-koi',
-        backgroundColor: 'oklch(95.0% 0.012 85.0 / 1)',
-        mainColor: 'oklch(60.0% 0.170 40.0 / 1)',
-        secondaryColor: 'oklch(72.0% 0.095 120.0 / 1)',
-      },
       {
         id: 'koi-pond',
         backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
@@ -560,12 +541,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(20.83% 0.0367 263.24 / 1)',
         mainColor: 'oklch(65.16% 0.1943 14.70 / 1)',
         secondaryColor: 'oklch(68.92% 0.1657 313.51 / 1)',
-      },
-      {
-        id: 'yukata-breeze',
-        backgroundColor: 'oklch(93.0% 0.012 240.0 / 1)',
-        mainColor: 'oklch(55.0% 0.165 230.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.115 185.0 / 1)',
       },
       {
         id: 'dusk-voyager',
@@ -1288,12 +1263,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(15.0% 0.028 255.0 / 1)',
         mainColor: 'oklch(82.0% 0.155 210.0 / 1)',
         secondaryColor: 'oklch(70.0% 0.145 35.0 / 1)',
-      },
-      {
-        id: 'paper-lantern',
-        backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
-        mainColor: 'oklch(55.0% 0.095 55.0 / 1)',
-        secondaryColor: 'oklch(68.0% 0.085 30.0 / 1)',
       },
       {
         id: 'wavecrest-blue',
