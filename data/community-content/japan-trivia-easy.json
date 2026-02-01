@@ -118,5 +118,16 @@
     "Hiroshima"
   ],
   "correctIndex": 0
-}
+  },
+  {
+    "question": "Which Japanese dish is made with buckwheat noodles?",
+    "difficulty": "easy",
+    "answers": [
+      "Soba",
+      "Udon",
+      "Ramen",
+      "Somem"
+    ],
+    "correctIndex": 0
+  }
 ]
